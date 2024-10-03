@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Highlighter",
+  "version": "1.0",
+  "description": "Highlight specified words in Gmail",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
